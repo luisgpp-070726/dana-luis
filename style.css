@@ -1,11 +1,13 @@
-body { margin: 0; background: #0b0e14; color: white; font-family: 'Arial', sans-serif; text-align: center; overflow-x: hidden; }
-#stars { position: fixed; width: 100%; height: 100%; background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); z-index: -1; }
+body { margin: 0; background: radial-gradient(circle at center, #1b0028, #000000); color: #fff; font-family: sans-serif; text-align: center; overflow-x: hidden; min-height: 100vh; }
+#stars { position: fixed; width: 100%; height: 100%; z-index: -1; }
 .screen { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-#envelope { font-size: 80px; cursor: pointer; transition: transform 0.3s; }
-#envelope:hover { transform: scale(1.1); }
 .hidden { display: none; }
-h1 { font-size: 2.5rem; margin-top: 50px; }
-#letter { max-width: 600px; margin: 20px auto; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; }
-.buttons button { margin: 10px; padding: 15px 25px; cursor: pointer; border: none; border-radius: 25px; background: #ff4d6d; color: white; font-weight: bold; }
-footer { margin-top: 50px; padding-bottom: 30px; }
-#secret-trigger { font-size: 30px; cursor: pointer; }
+#envelope { font-size: 100px; cursor: pointer; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+h1 { font-size: 2.5rem; color: #ff99ac; text-shadow: 0 0 10px #ff4d6d; }
+#letter { max-width: 700px; margin: 30px auto; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; font-size: 1.2rem; }
+.buttons button { margin: 10px; padding: 15px 30px; cursor: pointer; border: none; border-radius: 50px; background: linear-gradient(45deg, #ff4d6d, #ff758c); color: white; font-weight: bold; }
+#timer { font-size: 1.5rem; font-weight: bold; color: #ff99ac; }
+#modal-card { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 100; }
+.card-content { background: linear-gradient(135deg, #fff5f7 0%, #ffd6e0 100%); padding: 30px; border-radius: 25px; border: 3px solid #ff4d6d; max-width: 80%; color: #881631; font-weight: bold; position: relative; text-align: center; }
+.close-btn { position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 25px; color: #ff4d6d; }
