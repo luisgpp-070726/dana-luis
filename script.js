@@ -23,7 +23,7 @@ function typeWriter(text, i) {
 function showModal(title, text) {
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-text').innerText = text;
-    document.getElementById('modal-card').classList.remove('hidden');
+    document.getElementById('modal-card').style.display = 'flex';
 }
-function closeModal() { document.getElementById('modal-card').classList.add('hidden'); }
+function closeModal() { document.getElementById('modal-card').style.display = 'none'; }
 function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expresar!"); }
