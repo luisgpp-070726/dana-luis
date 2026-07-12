@@ -8,8 +8,6 @@
 </head>
 <body>
     <div id="stars"></div>
-    <div id="petals"></div>
-    
     <div id="intro" class="screen">
         <p class="fade-text">Hay regalos que se compran...</p>
         <p class="fade-text">...y otros que nacen del corazón.</p>
@@ -18,19 +16,16 @@
 
     <div id="main-content" class="hidden">
         <h1>Mi princesa Dana ❤️</h1>
-        <div id="letter">
-            <p id="typewriter"></p>
-        </div>
-        
+        <div id="letter"><p id="typewriter"></p></div>
         <div id="timer-section">
             <p>Nuestra historia comenzó...</p>
             <div id="timer"></div>
         </div>
 
         <div class="buttons">
-            <button onclick="alert('Razón: Porque iluminas mis días con solo existir y haces que todo sea mejor a tu lado.')">💖 ¿Por qué te amo?</button>
+            <button onclick="showModal('¿Por qué te amo?', 'Porque iluminas mis días con solo existir y haces que todo sea mejor a tu lado. ❤️')">💖 ¿Por qué te amo?</button>
             <button onclick="window.open('https://open.spotify.com/track/15V6UK1RBKw5tYyZVnAFXN?si=JqH0c7MRTFaGrimITBQRsA', '_blank')">🎵 Nuestra canción</button>
-            <button onclick="alert('Promesa: Te prometo proteger nuestro amor, escucharte siempre y trabajar cada día para ser la mejor versión de mí para ti.')">💍 Mi promesa</button>
+            <button onclick="showModal('Mi promesa', 'Te prometo proteger nuestro amor, escucharte siempre y trabajar cada día para ser la mejor versión de mí para ti. 💍')">💍 Mi promesa</button>
         </div>
 
         <footer>
@@ -39,6 +34,13 @@
         </footer>
     </div>
 
+    <div id="modal-card" class="hidden">
+        <div class="card-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-text"></p>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
