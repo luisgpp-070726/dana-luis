@@ -28,9 +28,9 @@ function showModal(title, text) {
 function closeModal() { document.getElementById('modal-card').style.display = 'none'; }
 function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expresar!"); }
 
-// Función específica para el diario
+// Función específica para el diario con la imagen
 function openDiario() {
     const titulo = "📖 Nuestra Historia";
-    const contenido = "¡Buenos días, mi amor! Espero que este lunes sea tan brillante como tú. Estoy profundamente agradecido por tener un día más a tu lado.<br><br>\"Eres el sueño que nunca quiero dejar de vivir, cada día contigo es mi mayor fortuna.\" 💖<br><br><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div><div class='fecha-minima'>13 de julio, 2026</div>";
+    const contenido = "<img src='https://i.postimg.cc/j2XzX15t/Chat-GPT-Image-13-jul-2026-09-17-16.png' style='width:100%; border-radius:15px; margin-bottom:15px;'><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div><div class='fecha-minima'>13 de julio, 2026</div>";
     showModal(titulo, contenido);
 }
