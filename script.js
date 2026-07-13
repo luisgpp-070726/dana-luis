@@ -22,8 +22,15 @@ function typeWriter(text, i) {
 }
 function showModal(title, text) {
     document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-text').innerText = text;
+    document.getElementById('modal-text').innerHTML = text;
     document.getElementById('modal-card').style.display = 'flex';
 }
 function closeModal() { document.getElementById('modal-card').style.display = 'none'; }
 function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expresar!"); }
+
+// Función específica para el diario
+function openDiario() {
+    const titulo = "📖 Diario de Amor: 13 de Julio";
+    const contenido = "¡Buenos días, mi amor! Espero que este lunes sea tan brillante y especial como lo eres tú. 🌸<br><br>\"Eres el sueño que nunca quiero dejar de vivir, cada día contigo es mi mayor fortuna.\" 💖<br><br><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div>";
+    showModal(titulo, contenido);
+}
