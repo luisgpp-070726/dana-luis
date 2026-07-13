@@ -30,7 +30,7 @@ function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expr
 
 // Función específica para el diario
 function openDiario() {
-    const titulo = "📖 Diario de Amor: 13 de Julio";
-    const contenido = "¡Buenos días, mi amor! Espero que este lunes sea tan brillante y especial como lo eres tú. 🌸<br><br>\"Eres el sueño que nunca quiero dejar de vivir, cada día contigo es mi mayor fortuna.\" 💖<br><br><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div>";
+    const titulo = "📖 Nuestra Historia";
+    const contenido = "¡Buenos días, mi amor! Espero que este lunes sea tan brillante como tú. Estoy profundamente agradecido por tener un día más a tu lado.<br><br>\"Eres el sueño que nunca quiero dejar de vivir, cada día contigo es mi mayor fortuna.\" 💖<br><br><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div><div class='fecha-minima'>13 de julio, 2026</div>";
     showModal(titulo, contenido);
 }
