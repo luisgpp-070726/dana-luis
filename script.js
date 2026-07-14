@@ -15,7 +15,6 @@ const razones = [
     "Porque simplemente, eres la persona con la que quiero compartir el resto de mi vida."
 ];
 
-// Función para escribir el mensaje inicial
 function typeWriter(text, i) {
     if (i < text.length) {
         document.getElementById("typewriter").innerHTML += text.charAt(i);
@@ -33,10 +32,7 @@ function updateTimer() {
 document.getElementById('envelope').onclick = () => {
     document.getElementById('intro').classList.add('hidden');
     document.getElementById('main-content').classList.remove('hidden');
-    
-    // Mensaje de invitación
     typeWriter("¡Hola, mi princesa Dana! ❤️ He preparado algo muy especial para ti: 100 razones por las que te elijo cada día. Te invito a descubrir una nueva razón cada mañana a las 7:00 AM. ¡Espero que este detalle te haga sonreír tanto como tú me haces sonreír a mí!", 0);
-    
     setInterval(updateTimer, 1000);
 };
 
@@ -69,14 +65,28 @@ function mostrarRazon(index) {
 }
 
 function openRazones() { mostrarRazon(0); }
+
 function showModal(title, text) {
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-body').innerHTML = text;
     document.getElementById('modal-card').style.display = 'flex';
 }
+
 function closeModal() { document.getElementById('modal-card').style.display = 'none'; }
+
 function openDiario() {
-    const contenido = "<img src='https://i.postimg.cc/vmbxPzJR/Chat-GPT-Image-13-jul-2026-09-33-41.png' style='width:100%; border-radius:15px; margin-bottom:15px;'><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div><div class='fecha-minima'>13 de julio, 2026</div>";
+    const contenido = 
+        "<div style='margin-bottom: 20px; border-bottom: 2px solid #ff4d6d; padding-bottom: 15px;'>" +
+            "<img src='https://i.postimg.cc/k47Z168H/Chat-GPT-Image-14-jul-2026-06-38-06.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
+            "<div class='fecha-minima'>14 de julio, 2026</div>" +
+        "</div>" +
+        "<div style='margin-bottom: 20px;'>" +
+            "<img src='https://i.postimg.cc/vmbxPzJR/Chat-GPT-Image-13-jul-2026-09-33-41.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
+            "<div class='fecha-minima'>13 de julio, 2026</div>" +
+        "</div>" +
+        "<div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div>";
+    
     showModal("📖 Nuestra Historia", contenido);
 }
+
 function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expresar!"); }
