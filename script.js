@@ -1,8 +1,9 @@
 const startDate = new Date('2026-07-07T21:47:00');
+// Razón 1 disponible desde el 14 de julio a las 07:00 AM (Cochabamba, -4:00)
 const fechaInicioRazones = new Date('2026-07-14T07:00:00-04:00'); 
 
 const razones = [
-    "Porque tu sonrisa es mi lugar favorito en el mundo.",
+    "Porque cuando nos conocimos, fue como descubrir una parte de mí que siempre estuvo esperando encontrarte, conectando contigo como si nos conociéramos de toda la vida.",
     "Porque haces que mis días grises se conviertan en días llenos de color.",
     "Porque me escuchas con paciencia y me haces sentir comprendido siempre.",
     "Porque tu forma de ser es la más pura y hermosa que he conocido jamás.",
@@ -33,7 +34,7 @@ document.getElementById('envelope').onclick = () => {
     document.getElementById('intro').classList.add('hidden');
     document.getElementById('main-content').classList.remove('hidden');
     
-    // MENSAJE INVITACIÓN: Aquí está tu mensaje lindo y amoroso
+    // Mensaje de invitación
     typeWriter("¡Hola, mi princesa Dana! ❤️ He preparado algo muy especial para ti: 100 razones por las que te elijo cada día. Te invito a descubrir una nueva razón cada mañana a las 7:00 AM. ¡Espero que este detalle te haga sonreír tanto como tú me haces sonreír a mí!", 0);
     
     setInterval(updateTimer, 1000);
