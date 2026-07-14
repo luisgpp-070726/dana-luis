@@ -1,36 +1,17 @@
-const startDate = new Date('2026-07-07T21:47:00');
-function updateTimer() {
-    const now = new Date();
-    const diff = now - startDate;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    document.getElementById('timer').innerHTML = `${days} días, ${hours}h ${minutes}m ${seconds}s`;
-}
-document.getElementById('envelope').onclick = () => {
-    document.getElementById('intro').classList.add('hidden');
-    document.getElementById('main-content').classList.remove('hidden');
-    typeWriter("Dana, cada segundo a tu lado confirma que eres la persona que quiero conmigo. No busco perfección, busco crecer contigo, cuidarte y hacerte sonreír cada día. Gracias por ser mi princesa y por permitirme escribir esta historia a tu lado.", 0);
-    setInterval(updateTimer, 1000);
-};
-function typeWriter(text, i) {
-    if (i < text.length) {
-        document.getElementById("typewriter").innerHTML += text.charAt(i);
-        setTimeout(() => typeWriter(text, i + 1), 40);
-    }
-}
-function showModal(title, text) {
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-text').innerHTML = text;
-    document.getElementById('modal-card').style.display = 'flex';
-}
-function closeModal() { document.getElementById('modal-card').style.display = 'none'; }
-function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expresar!"); }
-
-// Función específica para el diario con la imagen nueva
-function openDiario() {
-    const titulo = "📖 Nuestra Historia";
-    const contenido = "<img src='https://i.postimg.cc/vmbxPzJR/Chat-GPT-Image-13-jul-2026-09-33-41.png' style='width:100%; border-radius:15px; margin-bottom:15px;'><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div><div class='fecha-minima'>13 de julio, 2026</div>";
-    showModal(titulo, contenido);
-}
+body { margin: 0; background: radial-gradient(circle at center, #1b0028, #000000); color: #fff; font-family: sans-serif; text-align: center; overflow-x: hidden; min-height: 100vh; }
+#stars { position: fixed; width: 100%; height: 100%; z-index: -1; }
+.screen { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.hidden { display: none; }
+#envelope { font-size: 100px; cursor: pointer; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+h1 { font-size: 2.5rem; color: #ff99ac; text-shadow: 0 0 10px #ff4d6d; }
+#letter { max-width: 700px; margin: 30px auto; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; font-size: 1.2rem; }
+.buttons button { margin: 10px; padding: 15px 30px; cursor: pointer; border: none; border-radius: 50px; background: linear-gradient(45deg, #ff4d6d, #ff758c); color: white; font-weight: bold; }
+#timer { font-size: 1.5rem; font-weight: bold; color: #ff99ac; }
+#modal-card { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 100; }
+.card-content { background: linear-gradient(135deg, #fff5f7 0%, #ffd6e0 100%); padding: 30px; border-radius: 25px; border: 3px solid #ff4d6d; max-width: 80%; color: #881631; font-weight: bold; position: relative; text-align: center; }
+.close-btn { position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 25px; color: #ff4d6d; }
+.firma-corazon { margin-top: 10px; padding: 8px 15px; background: #ff4d6d; color: white; border-radius: 20px; font-weight: bold; display: inline-block; }
+.fecha-minima { font-size: 0.7rem; color: #881631; opacity: 0.7; margin-top: 15px; text-align: right; }
+.nav-buttons { margin-top: 20px; }
+.nav-buttons button { background: #ff4d6d; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin: 5px; }
