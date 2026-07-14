@@ -1,17 +1,50 @@
-body { margin: 0; background: radial-gradient(circle at center, #1b0028, #000000); color: #fff; font-family: sans-serif; text-align: center; overflow-x: hidden; min-height: 100vh; }
-#stars { position: fixed; width: 100%; height: 100%; z-index: -1; }
-.screen { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.hidden { display: none; }
-#envelope { font-size: 100px; cursor: pointer; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-h1 { font-size: 2.5rem; color: #ff99ac; text-shadow: 0 0 10px #ff4d6d; }
-#letter { max-width: 700px; margin: 30px auto; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; font-size: 1.2rem; }
-.buttons button { margin: 10px; padding: 15px 30px; cursor: pointer; border: none; border-radius: 50px; background: linear-gradient(45deg, #ff4d6d, #ff758c); color: white; font-weight: bold; }
-#timer { font-size: 1.5rem; font-weight: bold; color: #ff99ac; }
-#modal-card { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 100; }
-.card-content { background: linear-gradient(135deg, #fff5f7 0%, #ffd6e0 100%); padding: 30px; border-radius: 25px; border: 3px solid #ff4d6d; max-width: 80%; color: #881631; font-weight: bold; position: relative; text-align: center; }
-.close-btn { position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 25px; color: #ff4d6d; }
-.firma-corazon { margin-top: 10px; padding: 8px 15px; background: #ff4d6d; color: white; border-radius: 20px; font-weight: bold; display: inline-block; }
-.fecha-minima { font-size: 0.7rem; color: #881631; opacity: 0.7; margin-top: 15px; text-align: right; }
-.nav-buttons { margin-top: 20px; }
-.nav-buttons button { background: #ff4d6d; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin: 5px; }
+const startDate = new Date('2026-07-07T21:47:00');
+let razonActual = 0;
+const razones = [
+    "Porque tu sonrisa es mi lugar favorito en el mundo.",
+    "Porque me escuchas como nadie más lo hace.",
+    "Porque cada día a tu lado es una aventura nueva.",
+    // Aquí puedes pedirme que agregue las 100, iré poniendo de 10 en 10
+];
+
+function updateTimer() {
+    const now = new Date();
+    const diff = now - startDate;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById('timer').innerHTML = `${days} días de nuestra historia`;
+}
+
+document.getElementById('envelope').onclick = () => {
+    document.getElementById('intro').classList.add('hidden');
+    document.getElementById('main-content').classList.remove('hidden');
+    setInterval(updateTimer, 1000);
+};
+
+function showModal(title, text) {
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-body').innerHTML = text;
+    document.getElementById('modal-card').style.display = 'flex';
+}
+
+function closeModal() { document.getElementById('modal-card').style.display = 'none'; }
+
+function openDiario() {
+    const contenido = "<img src='https://i.postimg.cc/vmbxPzJR/Chat-GPT-Image-13-jul-2026-09-33-41.png' style='width:100%; border-radius:15px; margin-bottom:15px;'><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div><div class='fecha-minima'>13 de julio, 2026</div>";
+    showModal("📖 Nuestra Historia", contenido);
+}
+
+function openRazones() {
+    mostrarRazon(0);
+}
+
+function mostrarRazon(index) {
+    razonActual = index;
+    const razon = razones[index] || "Si tuviera que volver a elegir, te elegiría a ti una y otra vez. ❤️";
+    const contenido = `<p style="font-size: 1.5rem; margin: 20px 0;">Razón ${index + 1} de ${razones.length}:</p>
+                       <p style="font-size: 1.2rem; font-style: italic;">"${razon}"</p>
+                       <div class="nav-buttons">
+                           ${index > 0 ? `<button onclick="mostrarRazon(${index - 1})">Anterior</button>` : ""}
+                           ${index < razones.length - 1 ? `<button onclick="mostrarRazon(${index + 1})">Siguiente</button>` : ""}
+                       </div>`;
+    showModal("✨ 100 Razones", contenido);
+}
