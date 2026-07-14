@@ -27,6 +27,7 @@
             <button onclick="window.open('https://youtu.be/NK_Z_RvZxTc?si=QOHa5KGSJ-06HUt6', '_blank')">🎵 Nuestra canción</button>
             <button onclick="showModal('Mi promesa', 'Te prometo proteger nuestro amor, escucharte siempre y trabajar cada día para ser la mejor versión de mí para ti. 💍')">💍 Mi promesa</button>
             <button onclick="openDiario()">📖 Nuestro Diario</button>
+            <button onclick="openRazones()">✨ 100 Razones</button>
         </div>
 
         <footer>
@@ -35,11 +36,12 @@
         </footer>
     </div>
 
+    <!-- Modal para todo -->
     <div id="modal-card">
-        <div class="card-content">
+        <div class="card-content" id="modal-content-box">
             <span class="close-btn" onclick="closeModal()">×</span>
             <h2 id="modal-title"></h2>
-            <p id="modal-text"></p>
+            <div id="modal-body"></div>
         </div>
     </div>
     <script src="script.js"></script>
