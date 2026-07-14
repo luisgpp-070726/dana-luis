@@ -1,5 +1,4 @@
 const startDate = new Date('2026-07-07T21:47:00');
-// Ajustado: La Razón 1 se desbloquea el 14 de julio a las 07:00 AM (Cochabamba, -4:00)
 const fechaInicioRazones = new Date('2026-07-14T07:00:00-04:00'); 
 
 const razones = [
@@ -15,6 +14,14 @@ const razones = [
     "Porque simplemente, eres la persona con la que quiero compartir el resto de mi vida."
 ];
 
+// Función para escribir el mensaje inicial
+function typeWriter(text, i) {
+    if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        setTimeout(() => typeWriter(text, i + 1), 40);
+    }
+}
+
 function updateTimer() {
     const now = new Date();
     const diff = now - startDate;
@@ -25,22 +32,23 @@ function updateTimer() {
 document.getElementById('envelope').onclick = () => {
     document.getElementById('intro').classList.add('hidden');
     document.getElementById('main-content').classList.remove('hidden');
+    
+    // MENSAJE INVITACIÓN: Aquí está tu mensaje lindo y amoroso
+    typeWriter("¡Hola, mi princesa Dana! ❤️ He preparado algo muy especial para ti: 100 razones por las que te elijo cada día. Te invito a descubrir una nueva razón cada mañana a las 7:00 AM. ¡Espero que este detalle te haga sonreír tanto como tú me haces sonreír a mí!", 0);
+    
     setInterval(updateTimer, 1000);
 };
 
-// Lógica: Calcula cuántos días completos han pasado desde el 14 de julio
 function obtenerRazonesDisponibles() {
     const now = new Date();
     const diff = now - fechaInicioRazones;
     const diasPasados = Math.floor(diff / (1000 * 60 * 60 * 24));
-    // Si aún no es el 14 a las 7am, díasPasados será negativo, por eso usamos Math.max(0, ...)
     return Math.max(0, diasPasados + 1);
 }
 
 function mostrarRazon(index) {
     const disponibles = obtenerRazonesDisponibles();
     const razon = razones[index];
-    
     let contenido = "";
     
     if (index < disponibles) {
@@ -70,3 +78,4 @@ function openDiario() {
     const contenido = "<img src='https://i.postimg.cc/vmbxPzJR/Chat-GPT-Image-13-jul-2026-09-33-41.png' style='width:100%; border-radius:15px; margin-bottom:15px;'><div class='firma-corazon'>❤️ Dana y Luis juntos por siempre ❤️</div><div class='fecha-minima'>13 de julio, 2026</div>";
     showModal("📖 Nuestra Historia", contenido);
 }
+function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expresar!"); }
