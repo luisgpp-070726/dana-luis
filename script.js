@@ -1,5 +1,4 @@
 const startDate = new Date('2026-07-07T21:47:00');
-// Razón 1 disponible desde el 14 de julio a las 07:00 AM (Cochabamba, -4:00)
 const fechaInicioRazones = new Date('2026-07-14T07:00:00-04:00'); 
 
 const razones = [
@@ -77,7 +76,7 @@ function closeModal() { document.getElementById('modal-card').style.display = 'n
 function openDiario() {
     const contenido = 
         "<div style='margin-bottom: 20px; border-bottom: 2px solid #ff4d6d; padding-bottom: 15px;'>" +
-            "<img src='https://i.postimg.cc/k47Z168H/Chat-GPT-Image-14-jul-2026-06-38-06.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
+            "<img src='https://i.postimg.cc/MK7Sdgg3/Whats-App-Image-2026-07-14-at-7-29-10-AM.jpg' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
             "<div class='fecha-minima'>14 de julio, 2026</div>" +
         "</div>" +
         "<div style='margin-bottom: 20px;'>" +
