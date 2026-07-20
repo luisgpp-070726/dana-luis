@@ -3,6 +3,7 @@ const fechaInicioRazones = new Date('2026-07-14T07:00:00-04:00');
 
 const razones = [
     "Porque cuando nos conocimos, fue como descubrir una parte de mí que siempre estuvo esperando encontrarte, conectando contigo como si nos conociéramos de toda la vida.",
+    "Sé que a veces, de manera inconsciente, se me escapa llamarte de 'usted', pero prometo esforzarme de corazón para ir cambiando eso poco a poco. Es un hábito arraigado, pero por ti y por la cercanía que merecemos, haré que eso deje de suceder. Solo te pido un poquito de paciencia mientras doy este paso, mi amor.",
     "Porque haces que mis días grises se conviertan en días llenos de color.",
     "Porque me escuchas con paciencia y me haces sentir comprendido siempre.",
     "Porque tu forma de ser es la más pura y hermosa que he conocido jamás.",
