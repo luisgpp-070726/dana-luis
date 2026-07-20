@@ -15,7 +15,7 @@ const razones = [
     "Porque simplemente, eres la persona con la que quiero compartir el resto de mi vida."
 ];
 
-// Tu sección de promesas (aquí va tu nueva promesa adaptada de forma romántica)
+// Sección de promesas con tu nueva promesa integrada correctamente
 const promesas = [
     "Promesa 1: Estar a tu lado y cuidarte en cada paso que demos juntos, siendo tu refugio y tu apoyo incondicional en cualquier circunstancia.",
     "Promesa 2: Sé que a veces, de manera inconsciente, se me escapa llamarte de 'usted', pero prometo esforzarme de corazón para ir cambiando eso poco a poco. Es un hábito arraigado, pero por ti y por la cercanía que merecemos, haré que eso deje de suceder. Solo te pido un poquito de paciencia mientras doy este paso, mi amor."
@@ -72,7 +72,6 @@ function mostrarRazon(index) {
 
 function openRazones() { mostrarRazon(0); }
 
-// Función para abrir la sección de Promesas
 function mostrarPromesa(index) {
     const promesa = promesas[index];
     let contenido = `<p style="font-size: 1.2rem; color: #881631;">Promesa ${index + 1}:</p>
@@ -83,7 +82,7 @@ function mostrarPromesa(index) {
                     ${index < promesas.length - 1 ? `<button onclick="mostrarPromesa(${index + 1})">Siguiente</button>` : ""}
                   </div>`;
                   
-    showModal("💍 Nustras Promesas", contenido);
+    showModal("💍 Nuestras Promesas", contenido);
 }
 
 function openPromesas() { mostrarPromesa(0); }
@@ -98,17 +97,14 @@ function closeModal() { document.getElementById('modal-card').style.display = 'n
 
 function openDiario() {
     const contenido = 
-        // Nueva foto del 19 de julio
         "<div style='margin-bottom: 20px; border-bottom: 2px solid #ff4d6d; padding-bottom: 15px;'>" +
             "<img src='https://i.postimg.cc/Y0hZn1nj/Chat-GPT-Image-19-jul-2026-19-45-57.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
             "<div class='fecha-minima'>19 de julio, 2026</div>" +
         "</div>" +
-        // Foto del 14 de julio
         "<div style='margin-bottom: 20px; border-bottom: 2px solid #ff4d6d; padding-bottom: 15px;'>" +
             "<img src='https://i.postimg.cc/MK7Sdgg3/Whats-App-Image-2026-07-14-at-7-29-10-AM.jpg' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
             "<div class='fecha-minima'>14 de julio, 2026</div>" +
         "</div>" +
-        // Foto del 13 de julio
         "<div style='margin-bottom: 20px;'>" +
             "<img src='https://i.postimg.cc/vmbxPzJR/Chat-GPT-Image-13-jul-2026-09-33-41.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
             "<div class='fecha-minima'>13 de julio, 2026</div>" +
