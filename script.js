@@ -1,9 +1,9 @@
 const startDate = new Date('2026-07-07T21:47:00');
 const fechaInicioRazones = new Date('2026-07-14T07:00:00-04:00'); 
 
+// Tus 10 razones originales intactas
 const razones = [
     "Porque cuando nos conocimos, fue como descubrir una parte de mí que siempre estuvo esperando encontrarte, conectando contigo como si nos conociéramos de toda la vida.",
-    "Sé que a veces, de manera inconsciente, se me escapa llamarte de 'usted', pero prometo esforzarme de corazón para ir cambiando eso poco a poco. Es un hábito arraigado, pero por ti y por la cercanía que merecemos, haré que eso deje de suceder. Solo te pido un poquito de paciencia mientras doy este paso, mi amor.",
     "Porque haces que mis días grises se conviertan en días llenos de color.",
     "Porque me escuchas con paciencia y me haces sentir comprendido siempre.",
     "Porque tu forma de ser es la más pura y hermosa que he conocido jamás.",
@@ -13,6 +13,12 @@ const razones = [
     "Porque a tu lado, el tiempo se detiene y solo importamos tú y yo.",
     "Porque tu apoyo incondicional me da fuerzas para enfrentar cualquier reto.",
     "Porque simplemente, eres la persona con la que quiero compartir el resto de mi vida."
+];
+
+// Tu sección de promesas (aquí va tu nueva promesa adaptada de forma romántica)
+const promesas = [
+    "Promesa 1: Estar a tu lado y cuidarte en cada paso que demos juntos, siendo tu refugio y tu apoyo incondicional en cualquier circunstancia.",
+    "Promesa 2: Sé que a veces, de manera inconsciente, se me escapa llamarte de 'usted', pero prometo esforzarme de corazón para ir cambiando eso poco a poco. Es un hábito arraigado, pero por ti y por la cercanía que merecemos, haré que eso deje de suceder. Solo te pido un poquito de paciencia mientras doy este paso, mi amor."
 ];
 
 function typeWriter(text, i) {
@@ -66,6 +72,22 @@ function mostrarRazon(index) {
 
 function openRazones() { mostrarRazon(0); }
 
+// Función para abrir la sección de Promesas
+function mostrarPromesa(index) {
+    const promesa = promesas[index];
+    let contenido = `<p style="font-size: 1.2rem; color: #881631;">Promesa ${index + 1}:</p>
+                     <p style="font-size: 1.4rem; font-style: italic; color: #333; margin: 20px 0;">"${promesa}"</p>`;
+
+    contenido += `<div class="nav-buttons">
+                    ${index > 0 ? `<button onclick="mostrarPromesa(${index - 1})">Anterior</button>` : ""}
+                    ${index < promesas.length - 1 ? `<button onclick="mostrarPromesa(${index + 1})">Siguiente</button>` : ""}
+                  </div>`;
+                  
+    showModal("💍 Nustras Promesas", contenido);
+}
+
+function openPromesas() { mostrarPromesa(0); }
+
 function showModal(title, text) {
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-body').innerHTML = text;
@@ -76,7 +98,7 @@ function closeModal() { document.getElementById('modal-card').style.display = 'n
 
 function openDiario() {
     const contenido = 
-        // Nueva foto del 19 de julio con su enlace actualizado
+        // Nueva foto del 19 de julio
         "<div style='margin-bottom: 20px; border-bottom: 2px solid #ff4d6d; padding-bottom: 15px;'>" +
             "<img src='https://i.postimg.cc/Y0hZn1nj/Chat-GPT-Image-19-jul-2026-19-45-57.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
             "<div class='fecha-minima'>19 de julio, 2026</div>" +
