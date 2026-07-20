@@ -75,10 +75,17 @@ function closeModal() { document.getElementById('modal-card').style.display = 'n
 
 function openDiario() {
     const contenido = 
+        // Nueva foto del 19 de julio
+        "<div style='margin-bottom: 20px; border-bottom: 2px solid #ff4d6d; padding-bottom: 15px;'>" +
+            "<img src='https://i.postimg.cc/Y0hZn1nj/Chat-GPT-Image-19-jul-2026-19-45-57.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
+            "<div class='fecha-minima'>19 de julio, 2026</div>" +
+        "</div>" +
+        // Foto anterior del 14 de julio
         "<div style='margin-bottom: 20px; border-bottom: 2px solid #ff4d6d; padding-bottom: 15px;'>" +
             "<img src='https://i.postimg.cc/MK7Sdgg3/Whats-App-Image-2026-07-14-at-7-29-10-AM.jpg' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
             "<div class='fecha-minima'>14 de julio, 2026</div>" +
         "</div>" +
+        // Foto del 13 de julio
         "<div style='margin-bottom: 20px;'>" +
             "<img src='https://i.postimg.cc/vmbxPzJR/Chat-GPT-Image-13-jul-2026-09-33-41.png' style='width:100%; border-radius:15px; margin-bottom:10px;'>" +
             "<div class='fecha-minima'>13 de julio, 2026</div>" +
