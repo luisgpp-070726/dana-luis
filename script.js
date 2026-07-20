@@ -15,7 +15,7 @@ const razones = [
     "Porque simplemente, eres la persona con la que quiero compartir el resto de mi vida."
 ];
 
-// Sección de promesas con tu nueva promesa integrada correctamente
+// Sección de promesas
 const promesas = [
     "Promesa 1: Estar a tu lado y cuidarte en cada paso que demos juntos, siendo tu refugio y tu apoyo incondicional en cualquier circunstancia.",
     "Promesa 2: Sé que a veces, de manera inconsciente, se me escapa llamarte de 'usted', pero prometo esforzarme de corazón para ir cambiando eso poco a poco. Es un hábito arraigado, pero por ti y por la cercanía que merecemos, haré que eso deje de suceder. Solo te pido un poquito de paciencia mientras doy este paso, mi amor."
@@ -38,7 +38,7 @@ function updateTimer() {
 document.getElementById('envelope').onclick = () => {
     document.getElementById('intro').classList.add('hidden');
     document.getElementById('main-content').classList.remove('hidden');
-    typeWriter("¡Hola, mi princesa Dana! ❤️ He preparado algo muy especial para ti: 100 razones por las que te elijo cada día. Te invito a descubrir una nueva razón cada mañana a las 7:00 AM. ¡Espero que este detalle te haga sonreír tanto como tú me haces sonreír a mí!", 0);
+    typeWriter("¡Hola, mi princesa Dana! ❤️ He preparado algo muy especial para题: 100 razones por las que te elijo cada día. Te invito a descubrir una nueva razón cada mañana a las 7:00 AM. ¡Espero que este detalle te haga sonreír tanto como tú me haces sonreír a mí!", 0);
     setInterval(updateTimer, 1000);
 };
 
@@ -114,4 +114,7 @@ function openDiario() {
     showModal("📖 Nuestra Historia", contenido);
 }
 
-function checkSecret() { alert("¡Te amo más de lo que las palabras pueden expresar!"); }
+function playSong() {
+    // Abre la canción de Sin Bandera en YouTube en una nueva pestaña
+    window.open("https://www.youtube.com/watch?v=M715vWqg8t4", "_blank");
+}
