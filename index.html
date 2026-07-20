@@ -3,47 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para mi princesa Dana</title>
+    <title>Para mi princesa Dana ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="stars"></div>
+
+    <!-- Pantalla Inicial -->
     <div id="intro" class="screen">
-        <p class="fade-text">Hay regalos que se compran...</p>
-        <p class="fade-text">...y otros que nacen del corazón.</p>
         <div id="envelope">💌</div>
+        <p style="color: #ff99ac; font-size: 1.2rem; margin-top: 20px;">Toca el sobre para abrirlo</p>
     </div>
 
-    <div id="main-content" class="hidden">
-        <h1>Mi princesa Dana ❤️</h1>
-        <div id="letter"><p id="typewriter"></p></div>
-        <div id="timer-section">
-            <p>Nuestra historia comenzó...</p>
-            <div id="timer"></div>
+    <!-- Contenido Principal -->
+    <div id="main-content" class="screen hidden">
+        <h1>Nuestra Historia de Amor</h1>
+        <div id="timer"></div>
+        <div id="letter">
+            <p id="typewriter"></p>
         </div>
-
         <div class="buttons">
-            <button onclick="showModal('¿Por qué te amo?', 'Porque iluminas mis días con solo existir y haces que todo sea mejor a tu lado. ❤️')">💖 ¿Por qué te amo?</button>
-            <button onclick="window.open('https://youtu.be/NK_Z_RvZxTc?si=QOHa5KGSJ-06HUt6', '_blank')">🎵 Nuestra canción</button>
-            <button onclick="showModal('Mi promesa', 'Te prometo proteger nuestro amor, escucharte siempre y trabajar cada día para ser la mejor versión de mí para ti. 💍')">💍 Mi promesa</button>
-            <button onclick="openDiario()">📖 Nuestro Diario</button>
             <button onclick="openRazones()">✨ 100 Razones</button>
+            <button onclick="openPromesas()">💍 Promesas</button>
+            <button onclick="openDiario()">📖 Diario</button>
         </div>
-
-        <footer>
-            <div id="secret-trigger" onclick="checkSecret()">❤️</div>
-            <p>Siempre tuyo, Luis ❤️</p>
-        </footer>
     </div>
 
-    <!-- Modal para todo -->
+    <!-- Modal General -->
     <div id="modal-card">
-        <div class="card-content" id="modal-content-box">
-            <span class="close-btn" onclick="closeModal()">×</span>
-            <h2 id="modal-title"></h2>
-            <div id="modal-body"></div>
+        <div class="card-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" style="color: #ff4d6d; margin-top: 10px;"></h2>
+            <div id="modal-body" style="margin-top: 15px;"></div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
